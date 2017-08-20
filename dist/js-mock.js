@@ -6,7 +6,7 @@
  *
  * Copyright (c) 2015 Johannes Fischer
  */
-(function () {
+var JsMock = (function () {
 
   /* diagnostic variables */
   var _logsEnabled = false;
@@ -1030,5 +1030,8 @@
     window.JsMock = API;
   } else if (typeof module !== "undefined") {
     module.exports = API;
+  } else if (typeof Qt !== "undefined") {
+    return API;
   }
 })();
+
